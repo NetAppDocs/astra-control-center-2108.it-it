@@ -1,0 +1,56 @@
+---
+sidebar: sidebar 
+permalink: use/restore-apps.html 
+keywords: restore app, restoring an app, restore an app, restore 
+summary: 'Astra può ripristinare la configurazione dell"applicazione e lo storage persistente da uno snapshot o da un backup. I backup persistenti dello storage vengono trasferiti dall"archivio di oggetti, pertanto il ripristino da un backup esistente verrà completato più rapidamente.' 
+---
+= Ripristinare le applicazioni
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/use/
+
+
+[role="lead"]
+Astra Control Center può ripristinare l'applicazione da uno snapshot o da un backup. I backup e le snapshot persistenti dello storage vengono trasferiti dall'archivio a oggetti, pertanto il ripristino da uno snapshot esistente allo stesso cluster sarà più rapido rispetto ad altri metodi. È possibile utilizzare l'interfaccia utente Astra o. https://docs.netapp.com/us-en/astra-automation-2108/index.html["L'API Astra"^] per ripristinare le applicazioni.
+
+
+NOTE: Se utilizzi Helm per implementare le app, Astra Control Center richiede Helm versione 3. La gestione e la clonazione delle applicazioni implementate con Helm 3 (o aggiornate da Helm 2 a Helm 3) sono completamente supportate. Le app implementate con Helm 2 non sono supportate.
+
+
+NOTE: Se si esegue il ripristino in un cluster diverso, assicurarsi che il cluster utilizzi la stessa modalità di accesso al volume persistente (ad esempio ReadWriteMany). L'operazione di ripristino non riesce se la modalità di accesso al volume persistente di destinazione è diversa.
+
+[NOTE]
+====
+Quando crei un progetto per ospitare un'applicazione su un cluster OpenShift, al progetto (o namespace Kubernetes) viene assegnato un UID SecurityContext. Per consentire ad Astra Control Center di proteggere la tua applicazione e spostarla in un altro cluster o progetto in OpenShift, devi aggiungere policy che consentano all'applicazione di essere eseguita come qualsiasi UID. Ad esempio, i seguenti comandi CLI di OpenShift concedono le policy appropriate a un'applicazione WordPress.
+
+`oc new-project wordpress`
+`oc adm policy add-scc-to-group anyuid system:serviceaccounts:wordpress`
+`oc adm policy add-scc-to-user privileged -z default -n wordpress`
+
+====
+.Fasi
+. Fare clic su *Apps* (applicazioni), quindi sul nome di un'applicazione.
+. Fare clic su *Data Protection*.
+. Se si desidera eseguire il ripristino da uno snapshot, tenere selezionata l'icona *Snapshot*. In caso contrario, fare clic sull'icona *Backup* per eseguire il ripristino da un backup.
+. Fare clic sull'elenco a discesa nella colonna *azioni* per lo snapshot o il backup da cui si desidera eseguire il ripristino.
+. Fare clic su *Ripristina applicazione*.
+. *Dettagli ripristino*: Specificare i dettagli per il ripristino:
++
+** Immettere un nome e uno spazio dei nomi per l'applicazione.
++
+
+NOTE: Se stai ripristinando un'applicazione che è stata eliminata, scegli un nome e uno spazio dei nomi diversi per l'applicazione rispetto al nome originale. Se il nome dell'applicazione ripristinata è uguale a quello dell'applicazione eliminata, l'operazione di ripristino non riesce.
+
+** Scegliere il cluster di destinazione per l'applicazione.
+** Fare clic su *Review* (Rivedi).
+
+
+. *Restore Summary* (Riepilogo ripristino): Esaminare i dettagli relativi all'azione di ripristino e fare clic su *Restore* (Ripristina).
+
+
+.Risultato
+Astra Control Center ripristina l'applicazione in base alle informazioni fornite.
+
+
+NOTE: Dopo un'operazione di protezione dei dati (clone, backup, ripristino) e il successivo ridimensionamento persistente del volume, si verifica un ritardo di venti minuti prima che le nuove dimensioni del volume vengano visualizzate nell'interfaccia utente. L'operazione di protezione dei dati viene eseguita correttamente in pochi minuti ed è possibile utilizzare il software di gestione per il back-end dello storage per confermare la modifica delle dimensioni del volume.

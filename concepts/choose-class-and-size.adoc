@@ -1,0 +1,43 @@
+---
+sidebar: sidebar 
+permalink: concepts/choose-class-and-size.html 
+keywords: service level, storage class, storage classes, pv size, persistent volume size, volume size, bandwidth, performance, persistent, volume, kubernetes, containers 
+summary: Centro di controllo Astra supporta solo classi di storage Trident supportate dallo storage ONTAP. Devi comprendere come la classe di storage e le dimensioni persistenti del volume possono aiutarti a raggiungere i tuoi obiettivi di performance. 
+---
+= Classi di storage e dimensioni del volume persistente
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/concepts/
+
+
+[role="lead"]
+Centro di controllo Astra supporta ONTAP come storage back-end. Devi comprendere come la classe di storage e le dimensioni dei volumi persistenti (PV) possono aiutarti a raggiungere i tuoi obiettivi di performance.
+
+
+
+== Panoramica
+
+Al momento, il Centro di controllo Astra supporta solo classi di storage Trident supportate dallo storage ONTAP. Centro di controllo Astra rileva e utilizza le risorse già implementate, tra cui ONTAP, Trident e le classi di storage associate.
+
+
+NOTE: Le classi di storage Trident devono essere preconfigurate all'esterno di Astra Control Center.
+
+
+
+== Classi di storage
+
+Quando si aggiungono cluster ad Astra Control Center, viene richiesto di scegliere una delle classi di storage rilevate in precedenza per i volumi persistenti. I livelli di servizio nelle classi di storage sono progettati per esigenze di capacità e larghezza di banda diverse. Queste classi di storage scoperte sono idonee per l'utilizzo all'interno di Astra Control Center.
+
+
+
+== Dimensioni e performance del volume persistenti
+
+Consulta le informazioni di Trident che forniscono confronti dei costi ed esempi che possono aiutarti a comprendere meglio come abbinare un livello di servizio alle dimensioni del volume per soddisfare i tuoi obiettivi di performance.
+
+
+
+== Trova ulteriori informazioni
+
+* https://netapp-trident.readthedocs.io/en/stable-v21.01/dag/kubernetes/storage_configuration_trident.html["Documentazione di Trident sulla configurazione dello storage"^]
+
