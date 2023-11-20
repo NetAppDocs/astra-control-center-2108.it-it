@@ -35,7 +35,7 @@ Astra Control Center consente inoltre di gestire, migrare e proteggere i cluster
 
 == Per ulteriori informazioni
 
-* https://docs.netapp.com/us-en/astra/index.html["Documentazione del servizio Astra Control"^]
+* https://docs.netapp.com/us-en/astra-control-service/index.html["Documentazione del servizio Astra Control"^]
 * https://docs.netapp.com/us-en/astra-control-center/index.html["Documentazione di Astra Control Control"^]
 * https://docs.netapp.com/us-en/trident/index.html["Documentazione di Astra Trident"^]
 * https://docs.netapp.com/us-en/astra-automation-2108/index.html["Utilizzare l'API Astra"^]

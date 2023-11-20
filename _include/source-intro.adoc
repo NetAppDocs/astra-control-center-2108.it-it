@@ -58,8 +58,7 @@ Astra Control Center non supporta le applicazioni implementate con operatori abi
 
 NetApp ha validato alcune applicazioni per garantire la sicurezza e la coerenza di snapshot e backup.
 
-* https://docs.netapp.com/us-en/astra/learn/validated-vs-standard.html["Scopri la differenza tra un'applicazione validata e un'applicazione standard in Astra Control Service"^].
-* https://docs.netapp.com/us-en/astra-control-center/concepts/validated-vs-standard.html["Scopri la differenza tra un'applicazione validata e un'applicazione standard in Astra Control Center"^].
+* link:../concepts/validated-vs-standard.html["Scopri la differenza tra un'applicazione validata e un'applicazione standard in Astra Control Center"^].
 
 
 Indipendentemente dal tipo di applicazione utilizzata con Astra Control, è sempre necessario testare autonomamente il flusso di lavoro di backup e ripristino per assicurarsi di poter soddisfare i requisiti di disaster recovery.
@@ -142,7 +141,7 @@ Astra Control Center esegue questa operazione:
 
 == Per ulteriori informazioni
 
-* https://docs.netapp.com/us-en/astra/index.html["Documentazione del servizio Astra Control"^]
+* https://docs.netapp.com/us-en/astra-control-service/index.html["Documentazione del servizio Astra Control"^]
 * https://docs.netapp.com/us-en/astra-control-center/index.html["Documentazione di Astra Control Center"^]
 * https://docs.netapp.com/us-en/trident/index.html["Documentazione di Astra Trident"^]
 * https://docs.netapp.com/us-en/astra-automation-2108/index.html["Utilizzare l'API Astra"^]
